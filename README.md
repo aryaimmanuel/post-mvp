@@ -1,40 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Curagan Latest
 
-## Getting Started
+## Prerequisite
 
-First, run the development server:
+## Commit Message Guidelines
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Our project uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format for commit messages to ensure consistency and clarity. The project also utilize tooling like Husky and Commitizen to assist and enforce this.
+
+### Format
+
+Each commit message consists of a **header**, **body**, and **footer**. The header is mandatory, while the body and footer are optional.
+
+```
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Header
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The header is the most crucial part of the commit message:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- **type**: This represents the nature of the change and can be one of the following:
+  - `feat`: A new feature
+  - `fix`: A bug fix
+  - `docs`: Documentation-only changes
+  - `style`: Changes that don't affect the meaning of the code (white-space, formatting, etc.)
+  - `refactor`: A code change that neither fixes a bug nor adds a feature
+  - `test`: Adding or modifying tests
+  - `chore`: Changes to the build process or auxiliary tools/libraries/documentation
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Body
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This is where you can provide a more detailed description of the change. You can explain the motivation for the change, contrast this with previous behavior, or even reasons for certain parts of the change.
 
-## Learn More
+#### Footer
 
-To learn more about Next.js, take a look at the following resources:
+This is where you can reference any issues related to this commit (e.g., `Closes #42` or `Related to #57`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Using Commitizen
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+To make crafting these commit messages easier, we've integrated Commitizen:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Stage your changes: `git add .`
+2. Run: `npm run commit`
+3. Follow the interactive prompts to craft your commit message.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Manual Commits
+
+---
+
+If you prefer not to use Commitizen:
+
+1. Stage your changes: `git add .`
+2. Commit your changes: `git commit -m "type(scope): subject"`
+3. Ensure your commit message follows the Conventional Commits format.
+
+### Commit Linting
+
+We use `commitlint` to ensure that commit messages adhere to the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format. If your commit message doesn't meet the standard, the commit will fail. Adjust the message accordingly and try again.
